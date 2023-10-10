@@ -11,10 +11,14 @@ public class LibraryController {
     @Autowired
     public void setMyLibraryService(LibraryService myLibraryService) {this.myLibraryService = myLibraryService; }
 
-    @PostMapping("library/add")
+    @PostMapping("library/addBook")
     @ResponseStatus(HttpStatus.CREATED)
     public void registerBook(@RequestBody Book book) {
         myLibraryService.addBook(book);
+    }
+
+    @GetMapping("library/getBooks")
+    public void getListOfBooks(){
         myLibraryService.getBooks();
     }
 }
