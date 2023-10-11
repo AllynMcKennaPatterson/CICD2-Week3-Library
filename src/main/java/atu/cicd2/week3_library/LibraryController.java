@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController
 public class LibraryController {
     private LibraryService myLibraryService;
@@ -18,7 +20,7 @@ public class LibraryController {
     }
 
     @GetMapping("library/getBooks")
-    public void getListOfBooks(){
-        myLibraryService.getBooks();
+    public ArrayList getListOfBooks(){
+        return myLibraryService.getBooks();
     }
 }

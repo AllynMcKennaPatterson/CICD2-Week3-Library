@@ -16,9 +16,10 @@ public class LibraryService {
         System.out.println(book.getTitle() + " added to library");
     }
 
-    public void getBooks(){
+    public ArrayList getBooks(){
         for(Book book: books)
             System.out.println(book);
+        return books;
     }
 
 
